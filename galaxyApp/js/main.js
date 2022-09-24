@@ -1,8 +1,8 @@
 //The user will enter a date. Use that date to get the NASA picture of the day from that date! https://api.nasa.gov/
 
 
-const date = '2022-09-09'
-const url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=xExEP3mdmxItb2dYayHUnfxeXcDIxvTxTb8CkQ8h`
+let date = '2022-09-09'
+
 
 
 const d = document.getElementById('date')
@@ -39,21 +39,23 @@ function getDate() {
   
         console.log('utc m' + m)
         const dy = today.getDate();
-       let minyr = 1900;
+       let minyr = 1995;
        let maxmonth = 12;
        let maxday = 31;
+       
 
        let maxyr = y
 
         if (number === 8) {
-            notInTheFuture(1, maxday, maxmonth, 1, minyr, y, day, year, month, m, dy)
+            date = notInTheFuture(1, maxday, maxmonth, 1, minyr, y, day, year, month, m, dy)
+            
         }
     }
 
 }
 }
-
-
+console.log('this be date'  + date)
+const url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=xExEP3mdmxItb2dYayHUnfxeXcDIxvTxTb8CkQ8h`
 function addThePicture(json) {
 const imgTitle = document.querySelector('h2')
 const img = document.querySelector('img')
@@ -127,7 +129,14 @@ if ((y > thisyear)) {
  console.log(future)
 
 }
+if (future === false)
+{
+    let theDate = String(y)  + "-" + String(m) + "-" +  String(d)
+    return theDate;
+} else {
+    return "1996-01-01"
+}
 
-console.log(thisday)
+
 } 
 
