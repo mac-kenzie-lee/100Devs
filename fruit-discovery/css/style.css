@@ -19,3 +19,34 @@ img{
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+body {
+  display: flex;
+
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5%;
+}
+
+section {
+  text-align: center;
+  padding: 1rem;
+}
+
+section button {
+  margin: 1rem;
+}
+footer {
+  text-align: center;
+  background-color: pink;
+  width: 100%;
+  height: 60%;
+}
+footer button {
+  margin: 1rem;
+}
+#favBox {
+  display: flex; gap: 1rem;
+  list-style: none;
+}
